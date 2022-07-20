@@ -1,0 +1,13 @@
+GET http://localhost:3003/test
+
+###
+
+POST http://localhost:3003/turma
+Content-Type: application/json
+
+{
+    "nome": "guimaraes",
+    "docente": "PH",
+    "estudante": "Talita",
+    "modulo": "MODULO.MODULO_6"
+}
