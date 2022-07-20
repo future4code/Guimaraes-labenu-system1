@@ -1,4 +1,4 @@
--- Active: 1657909499156@@35.226.146.116@3306@guimaraes-4211089-raul-rita
+-- Active: 1658325348046@@35.226.146.116@3306@guimaraes-4211089-raul-rita
 USE `guimaraes-4211089-raul-rita`;
 
 CREATE TABLE LS_Turma(
@@ -55,6 +55,8 @@ CREATE TABLE LS_Docente_Especialidade (
 );
 
 ALTER TABLE `LS_Turma`
-MODIFY COLUMN modulo VARCHAR(255) NOT NULL;
+MODIFY COLUMN modulo VARCHAR(255) NOT NULL DEFAULT 0;
 
 SELECT * FROM `LS_Turma`;
+
+SELECT * FROM LS_Turma INNER JOIN `LS_Estudante` ON LS_Turma.id = LS_Estudante.turma_id;

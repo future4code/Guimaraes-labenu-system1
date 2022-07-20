@@ -1,25 +1,19 @@
 import { User } from "./User"
 
-export enum HOBBIES {
-    ASSITIR_SERIE = "Assistir séries de TV", 
-    JOGAR_VIDEO_GAME =  "Jogar vídeogame",
-    SAIR_COM_AMIGOS = "Sair com amigos",
-    PRATICAR_ESPORTES = "Praticar esportes"      
- } 
- 
+
 export class Estudante extends User{
-    public "hobby" : HOBBIES
+    public "hobby":string | string[]
     
     constructor(
       id:string,
       nome:string,
       email:string,
-      dataNasc:string,
-      turmaId:string,
-      hobby:HOBBIES
+      data_nasc:string,
+      turma_id:string,
+      hobby:string | string[]
     ){
-      super(id, nome, email, dataNasc, turmaId)
+      super(id, nome, email, data_nasc, turma_id)
       this.hobby = hobby
     }
- 
+
   }
