@@ -20,9 +20,7 @@ CREATE TABLE LS_Hobby (
 	nome_hobby ENUM("assistir séries de tv", "jogar videogames", "sair com os amigos", "praticar esportes") NOT NULL
 );
 
-ALTER TABLE `LS_Hobby`
-MODIFY COLUMN nome_hobby VARCHAR(255) NOT NULL;
-SELECT * FROM `LS_Hobby`;
+
 
 CREATE TABLE LS_Hobby_Estudante(
 	id VARCHAR(255) PRIMARY KEY,
@@ -55,3 +53,8 @@ CREATE TABLE LS_Docente_Especialidade (
 	id_docente VARCHAR(255), FOREIGN KEY(id_docente) REFERENCES LS_Docente(id),
 	id_especialidade VARCHAR(255), FOREIGN KEY(id_especialidade) REFERENCES LS_Especialidade(id)
 );
+
+ALTER TABLE `LS_Turma`
+MODIFY COLUMN modulo VARCHAR(255) NOT NULL;
+
+SELECT * FROM `LS_Turma`;
