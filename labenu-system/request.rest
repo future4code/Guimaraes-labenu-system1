@@ -6,8 +6,20 @@ POST http://localhost:3003/turma
 Content-Type: application/json
 
 {
-    "nome": "guimaraes",
-    "docente": "PH",
-    "estudante": "Talita",
-    "modulo": "MODULO.MODULO_6"
+    "nome": "abc",
+    "modulo": "Módulo 7"
+}
+
+###
+
+POST http://localhost:3003/aluno
+Content-Type: application/json
+
+{
+    "nome": "lady gaga",
+    "email": "ladygaga@julia",
+    "data_nasc": "10/12/1993",
+    "turma_id": "adcedc99-cd88-4a6d-9614-6051298c30a9",
+    "hobby": ["Voar", "Nadar", "Cantar", "Dançar", "Pular"]
+
 }
