@@ -1,16 +1,9 @@
 import { User } from "./User"
 
-export enum ESPECIALIDADES {
-    REACT = "React", 
-    JS = "JS",
-    CSS = "CSS",
-    TYPESCRIPT = "Typescript",
-    POO = "Programacao Orientada a Objetos",    
-} 
 
 export class Docente extends User {
 
-	public "especialidade": ESPECIALIDADES
+	public especialidade?: string[]
     
 	constructor(
 		id:string,
@@ -18,9 +11,7 @@ export class Docente extends User {
 		email:string,
 		data_nasc:string,
 		turma_id:string,
-		especialidade: ESPECIALIDADES
     ) {
 		super(id, nome, email, data_nasc, turma_id)
-		this.especialidade = especialidade
     }
 }

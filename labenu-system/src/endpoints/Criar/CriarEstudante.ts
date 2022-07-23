@@ -16,7 +16,7 @@ export async function criarEstudante(req:Request, res:Response):Promise<void> {
         }
 
         if (typeof(hobby) != "object") {
-            res.status(400).send("O hobby deve vir em forma de array!")
+            res.status(400).send("O(s) hobby(s) deve(m) vir em forma de array!")
             return
         }
 

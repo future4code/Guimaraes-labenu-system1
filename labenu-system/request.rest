@@ -7,7 +7,7 @@ Content-Type: application/json
 
 {
     "nome": "abc",
-    "modulo": "9"
+    "modulo": "5"
 }
 
 ###
@@ -21,4 +21,17 @@ Content-Type: application/json
     "data_nasc": "28/06/1993",
     "turma_id": "b555b321-8c42-4fab-9083-022c83b965d6",
     "hobby": ["Programar", "Nadar", "Dançar"]
+}
+
+###
+
+POST http://localhost:3003/docente
+Content-Type: application/json
+
+{
+    "nome": "Juliana",
+    "email": "juliana@email.com",
+    "data_nasc": "28/06/1990",
+    "turma_id": "b555b321-8c42-4fab-9083-022c83b965d6",
+    "especialidade": ["React", "JS", "poo"]
 }
