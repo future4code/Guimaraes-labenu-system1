@@ -5,7 +5,7 @@ export enum ESPECIALIDADES {
     JS = "JS",
     CSS = "CSS",
     TYPESCRIPT = "Typescript",
-    PROGRAMACAO_ORIENTADA_A_OBJETO = "Programacao Orientada a Objetos",    
+    POO = "Programacao Orientada a Objetos",    
 } 
 
 export class Docente extends User {
