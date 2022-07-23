@@ -1,7 +1,8 @@
 import connection from "./connection";
 import app from "./app";
 import { Request, Response } from "express";
-import { criarAluno, criarTurma } from "./endpoints/Criar";
+import { criarTurma } from "./endpoints/Criar/CriarTurma";
+import { criarAluno } from "./endpoints/Criar/CriarAluno";
 // import { v4 as generateId } from "uuid"
 
 // TESTANDO FUNCIONAMENTO DA API

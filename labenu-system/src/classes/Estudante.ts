@@ -2,7 +2,7 @@ import { User } from "./User"
 
 
 export class Estudante extends User{
-    public "hobby":string | string[]
+    public "hobby": string[]
     
     constructor(
       id:string,
@@ -10,7 +10,7 @@ export class Estudante extends User{
       email:string,
       data_nasc:string,
       turma_id:string,
-      hobby:string | string[]
+      hobby:string[]
     ){
       super(id, nome, email, data_nasc, turma_id)
       this.hobby = hobby
