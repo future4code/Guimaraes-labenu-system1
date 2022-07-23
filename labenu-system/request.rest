@@ -7,7 +7,7 @@ Content-Type: application/json
 
 {
     "nome": "abc",
-    "modulo": "Módulo 7"
+    "modulo": "9"
 }
 
 ###
@@ -21,5 +21,4 @@ Content-Type: application/json
     "data_nasc": "10/12/1993",
     "turma_id": "adcedc99-cd88-4a6d-9614-6051298c30a9",
     "hobby": ["Voar", "Nadar", "Cantar", "Dançar", "Pular"]
-
 }
