@@ -14,22 +14,22 @@ export enum MODULO {
 export class Turma {
     "id": string
     "nome": string
-    "docente": Docente
-    "estudante": Estudante
+    // "docente": Docente
+    // "estudante": Estudante
     "modulo": MODULO
     
     constructor(
         id:string,
         nome:string,
-        docente:Docente,
-        estudante:Estudante,
+        // docente:Docente,
+        // estudante:Estudante,
         modulo:MODULO
     ) 
     {
     this.id = id;
     this.nome = nome;
-    this.docente = docente
-    this.estudante = estudante
+    // this.docente = docente
+    // this.estudante = estudante
     this.modulo = modulo
     }
 }

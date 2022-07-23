@@ -1,8 +1,6 @@
 import { Request, Response } from "express";
-// import { Turma } from "../classes/Turma";
 import { v4 as generateId } from "uuid";
 import { Docente } from "../../classes/Docente";
-import { Estudante } from "../../classes/Estudante";
 import { MODULO, Turma } from "../../classes/turma";
 import connection from "../../connection";
 
@@ -11,6 +9,7 @@ export async function criarTurma(req:Request, res:Response) :Promise<void> {
     let errorCode = 400
     try {
         const {nome, modulo}:Turma = req.body
+        const id = generateId()
 
         if (!(Object.values(MODULO).includes(modulo))) {
             res.send("Módulo inválido!")
@@ -19,14 +18,14 @@ export async function criarTurma(req:Request, res:Response) :Promise<void> {
 
         if(!nome) {
             errorCode = 400
-            res.send("Todos os campos são obrigatórios.")
+            res.send("Insira o nome da Turma.")
         }
+
+        const novaTurma = new Turma(id, nome, modulo)
 
         await connection("LS_Turma")
         .insert({
-            id: generateId(),
-            nome,
-            modulo
+            novaTurma
         })
         
         res.status(200).send("Turma criada!")
