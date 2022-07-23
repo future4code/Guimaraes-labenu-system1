@@ -60,3 +60,9 @@ MODIFY COLUMN modulo VARCHAR(255) NOT NULL DEFAULT 0;
 SELECT * FROM `LS_Turma`;
 
 SELECT * FROM LS_Turma INNER JOIN `LS_Estudante` ON LS_Turma.id = LS_Estudante.turma_id;
+
+INSERT INTO `LS_Especialidade`(id,nome_especialidade) VALUES ("1", "react");
+INSERT INTO `LS_Especialidade`(id,nome_especialidade) VALUES ("2", "js");
+INSERT INTO `LS_Especialidade`(id,nome_especialidade) VALUES ("3", "css");
+INSERT INTO `LS_Especialidade`(id,nome_especialidade) VALUES ("4", "typescript");
+INSERT INTO `LS_Especialidade`(id,nome_especialidade) VALUES ("5", "poo");

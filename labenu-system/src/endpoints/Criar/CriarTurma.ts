@@ -24,9 +24,7 @@ export async function criarTurma(req:Request, res:Response) :Promise<void> {
         const novaTurma = new Turma(id, nome, modulo)
 
         await connection("LS_Turma")
-        .insert({
-            novaTurma
-        })
+        .insert(novaTurma)
         
         res.status(200).send("Turma criada!")
 

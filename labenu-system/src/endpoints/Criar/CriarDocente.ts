@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
 import { v4 as generateId } from "uuid";
-import { Docente, ESPECIALIDADES } from "../../classes/Docente";
+import { Docente} from "../../classes/Docente";
 import connection from "../../connection";
 
 
@@ -16,22 +16,38 @@ export async function criarDocente(req:Request, res:Response):Promise<void> {
         }
 
         if (typeof(especialidade) != "object") {
-            res.status(400).send("O hobby deve vir em forma de array!")
+            res.status(400).send("A(s) especialidade(s) deve(m) vir em forma de array!")
             return
         }
 
-        if (!(Object.values(ESPECIALIDADES).includes(especialidade))) {
-            res.send("Verifique as especialidades digitadas!")
-            return
-        }
-
-        const newDocente = new Docente(id, nome, email, data_nasc, turma_id, especialidade)
-        
+        const novoDocente = new Docente(id, nome, email, data_nasc, turma_id)
         await connection("LS_Docente")
-        .insert({
-            newDocente
-        })
-        res.status(200).send("Aluno cadastrado!")
+        .insert(novoDocente)
+
+        for (let e of especialidade) {
+            let buscaEspecialidade = await connection("LS_Especialidade").select("id")
+            .where("nome_especialidade", "like", e.toLowerCase())
+
+            const response = await connection("LS_Docente")
+            .select("id")
+            .where("email", "like", email)
+
+            if (buscaEspecialidade.length === 0) {
+                await connection("LS_Docente_Especialidade").delete().where("id_docente", "like", response[0].id)
+                await connection("LS_Docente").delete().where("email", "like", email)
+                res.send("Uma ou mais especialidades digitadas não existem.")
+                return
+            }
+
+            await connection("LS_Docente_Especialidade")
+            .insert({
+                id: generateId(),
+                id_docente: response[0].id,
+                id_especialidade: buscaEspecialidade[0].id
+            })
+        }
+
+        res.status(200).send("Docente cadastrado!")
 
     } catch (error:any) {
         console.log(error)
