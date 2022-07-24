@@ -6,7 +6,9 @@ import connection from "../../connection";
 
 export async function criarDocente(req:Request, res:Response):Promise<void> {
     let errorCode = 400
+
     try {
+
         const {nome, email, data_nasc, turma_id, especialidade}:Docente = req.body
         const id = generateId()
 
@@ -16,7 +18,7 @@ export async function criarDocente(req:Request, res:Response):Promise<void> {
         }
 
         if (typeof(especialidade) != "object") {
-            res.status(400).send("A(s) especialidade(s) deve(m) vir em forma de array!")
+            res.status(errorCode).send("A(s) especialidade(s) deve(m) vir em forma de array!")
             return
         }
 
@@ -25,7 +27,8 @@ export async function criarDocente(req:Request, res:Response):Promise<void> {
         .insert(novoDocente)
 
         for (let e of especialidade) {
-            let buscaEspecialidade = await connection("LS_Especialidade").select("id")
+            let buscaEspecialidade = await connection("LS_Especialidade")
+            .select("id")
             .where("nome_especialidade", "like", e.toLowerCase())
 
             const response = await connection("LS_Docente")
@@ -50,10 +53,6 @@ export async function criarDocente(req:Request, res:Response):Promise<void> {
         res.status(200).send("Docente cadastrado!")
 
     } catch (error:any) {
-        console.log(error)
-        console.error(error)
         res.status(errorCode).send(error.message || error.sqlMessage)
-
-
     }
 }

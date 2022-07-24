@@ -6,17 +6,19 @@ import connection from "../../connection";
 
 export async function criarEstudante(req:Request, res:Response):Promise<void> {
     let errorCode = 400
+
     try {
+        
         const {nome, email, data_nasc, turma_id, hobby}:Estudante = req.body
         const id = generateId()
 
         if(!nome || !email || !data_nasc || !turma_id) {
-            errorCode = 400
-            res.status(400).send("Todos os campos são obrigatórios.")
+            errorCode = 404
+            res.status(errorCode).send("Todos os campos são obrigatórios.")
         }
 
         if (typeof(hobby) != "object") {
-            res.status(400).send("O(s) hobby(s) deve(m) vir em forma de array!")
+            res.status(errorCode).send("O(s) hobby(s) deve(m) vir em forma de array!")
             return
         }
 
@@ -53,12 +55,10 @@ export async function criarEstudante(req:Request, res:Response):Promise<void> {
                 id_hobby: buscaHobby[0].id
             })
         }
+
         res.status(200).send("Aluno cadastrado!")
-        return
 
     } catch (error:any) {
-        console.log(error)
-        console.error(error)
         res.status(errorCode).send(error.message || error.sqlMessage)
     }
 }

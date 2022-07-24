@@ -66,3 +66,11 @@ INSERT INTO `LS_Especialidade`(id,nome_especialidade) VALUES ("2", "js");
 INSERT INTO `LS_Especialidade`(id,nome_especialidade) VALUES ("3", "css");
 INSERT INTO `LS_Especialidade`(id,nome_especialidade) VALUES ("4", "typescript");
 INSERT INTO `LS_Especialidade`(id,nome_especialidade) VALUES ("5", "poo");
+
+
+SELECT nome, nome_hobby 
+FROM LS_Hobby_Estudante 
+	INNER JOIN LS_Estudante 
+		ON LS_Hobby_Estudante.id_estudante = LS_Estudante.id
+	INNER JOIN LS_Hobby
+		ON LS_Hobby_Estudante.id_hobby = "8c1fa295-c2b9-4e9f-b62e-7ab486f546af";
