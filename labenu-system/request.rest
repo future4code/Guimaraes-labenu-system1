@@ -1,8 +1,4 @@
-GET http://localhost:3003/test
-
-###
-
-POST http://localhost:3003/turma
+POST http://localhost:3003/turma/
 Content-Type: application/json
 
 {
@@ -12,7 +8,7 @@ Content-Type: application/json
 
 ###
 
-POST http://localhost:3003/estudante
+POST http://localhost:3003/estudante/
 Content-Type: application/json
 
 {
@@ -25,7 +21,7 @@ Content-Type: application/json
 
 ###
 
-POST http://localhost:3003/docente
+POST http://localhost:3003/docente/
 Content-Type: application/json
 
 {
@@ -35,3 +31,51 @@ Content-Type: application/json
     "turma_id": "b555b321-8c42-4fab-9083-022c83b965d6",
     "especialidade": ["React", "JS", "poo"]
 }
+
+###
+
+GET http://localhost:3003/turma/ativa
+
+###
+
+GET http://localhost:3003/turma/
+
+###
+
+Get http://localhost:3003/estudante/?nome=
+
+###
+
+GET http://localhost:3003/docente/
+
+###
+
+
+
+PUT http://localhost:3003/turma/guimaraes
+Content-Type: application/json
+
+{
+    "modulo": "1"
+}
+
+###
+
+PUT http://localhost:3003/estudante/
+Content-Type: application/json
+
+{
+    "id": "a28cafd1-88e4-42b5-951a-1c075d08b8dd",
+    "turma": "joy"
+}
+
+###
+
+PUT http://localhost:3003/docente/
+Content-Type: application/json
+
+{
+    "id": "00800266-93f3-4d5c-b93d-3b6348afd150",
+    "turma": "joi"
+}
+

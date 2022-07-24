@@ -1,8 +1,5 @@
-import { Docente } from "./Docente"
-import { Estudante } from "./Estudante"
-
 export enum MODULO {
-	MODULO_0 = "Aulas não iniciadas", 
+	MODULO_0 = "0", 
 	MODULO_1 = "1",
 	MODULO_2 = "2",
 	MODULO_3 = "3",
@@ -14,22 +11,16 @@ export enum MODULO {
 export class Turma {
     "id": string
     "nome": string
-    // "docente": Docente
-    // "estudante": Estudante
     "modulo": MODULO
     
     constructor(
         id:string,
         nome:string,
-        // docente:Docente,
-        // estudante:Estudante,
         modulo:MODULO
     ) 
     {
     this.id = id;
     this.nome = nome;
-    // this.docente = docente
-    // this.estudante = estudante
     this.modulo = modulo
     }
 }
