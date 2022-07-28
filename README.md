@@ -1,33 +1,62 @@
-## LabenuSystem:
+<h1 align="center"> 💻 LabeSystem 💻</h1>
 
-Você estuda na Labenu_ há tanto tempo que já parecem anos, não é? Então, hoje, vamos pedir para criar um sistema que represente o básico da nossa organização. 
+<h2 align="center"> 📃 Sobre 📃</h2>
+<p align="justify"> Projeto de backend desenvolvido conforme proposta da Labenu para criação de uma API para um sistema de uma escola de programação.</p>
 
-Ele deve possuir, ao menos, as 3 entidades importantes:
+Esse sistema possui 3 entidades importantes:
 
-1. Estudantes 
+<h3> Estudantes </h3>
 
-    Representa estudantes da nossa instituição. Eles devem possuir: id, nome, email, data de nascimento e os principais hobbies dele. 
+<p> Representa estudantes da instituição. Eles possuem: id, nome, email, data de nascimento e os principais hobbies deles. </p>
 
-2. Docente
+<h3> Docente </h3>
 
-    Representa docentes da nossa instituição. Eles devem possuir: id, nome, email, data de nascimento e todas as especialidades dele. Há 7 especialidades: React, Redux, CSS, Testes, Typescript, Programação Orientada a Objetos e Backend
+<p> Representa docentes da instituição. Eles possuem: id, nome, email, data de nascimento e todas as especialidades deles. Há 5 especialidades: React, JS, CSS, Typescript, POO. </p>
 
-3. Turma
+<h3> Turma </h3>
 
-    Toda turma é composta das seguintes características: id, nome, data de início, data de término, lista de professores responsáveis, uma lista de alunos e módulo atual em que a turma está.
+<p> Toda turma é composta das seguintes características: id, nome e módulo atual em que a turma está. </p>
+<p> O módulo pode assumir os valores de 1 a 6, ou 0, indicando que as aulas dessa turma ainda não começaram. </p>
 
-    O módulo pode assumir os valores de 1 a 7 ou `undefined`, indicando que as aulas dessa turma ainda não começaram. Para esse exercício, vamos considerar que existam dois tipos de turma: integral ou noturna. Há uma restrição para o nome das turmas noturnas: tem que terminar com `-na-night`.
+<h2 align="center"> 📝 Documentação 📝 </h2>
 
-As funcionalidades básicas são:
+<p> https://documenter.getpostman.com/view/19721031/UzXKXeSC </p>
 
-→ Criar estudante;
+<h2 align="center"> ✅ O que funciona ✅ </h2>
 
-→ Criar docente;
+* Criar estudante;
+* Criar docente;
+* Criar turma;
+* Mudar aluno de turma;
+* Mudar docente de turma;
+* Mudar módulo da turma;
+* Buscar alunos;
+* Buscar docentes;
+* Buscar todas as turmas;
+* Buscar turmas ativas;
 
-→ Criar turma;
+<h2 align="center"> 🛠 Em desenvolvimento 🛠 </h2>
 
-→ Adicionar estudante na turma;
+* Ao buscar alunos não é exibido a lista de hobbies deles.
+* Ao buscar docentes não é exibido a lista de especialidades deles.
 
-→ Adicionar docente na turma;
+<h2 align="center">👨‍💻 Desenvolvedores 👩‍💻</h2>
 
-→ Pegar a idade de algum estudante a partir do id
+<table align="center"> 
+<tr>
+ 
+<td align="center"><a href="https://github.com/tiagohennig"><img style="border-radius: 50%" src="https://avatars.githubusercontent.com/u/86529848?v=4" width="100px" alt=""/>
+ <br />
+ <sub><b>Tiago Hennig</b></sub></a> <a href="https://github.com/tiagohennig"></a></td>
+
+ <td align="center"><a href="https://github.com/raul-rita"><img style="border-radius: 50%" src="https://avatars.githubusercontent.com/u/93088559?v=4" width="100px" alt=""/>
+ <br />
+ <sub><b>Raul Rita</b></sub></a> <a href="https://github.com/raul-rita"></a></td>
+  
+<td align="center"><a href="https://github.com/Maria-Karolina"><img style="border-radius: 50%" src="https://avatars.githubusercontent.com/u/88107710?v=4" width="100px" alt=""/>
+ <br />
+ <sub><b>Maria Karolina Freitas </b></sub></a> <a href="https://github.com/Maria-Karolina"></a></td>
+  
+</tr>
+  
+</table>
